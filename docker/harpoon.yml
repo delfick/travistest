@@ -1,0 +1,18 @@
+---
+
+context:
+  use_gitignore: true
+
+image_index: delfick/
+
+images:
+  travistest:
+    commands:
+      - FROM python:3.8.1-slim
+
+      - - ADD
+        - dest: /project/test.txt
+          content: |
+            a test of epic proportions
+
+      - CMD cat /project/test.txt
